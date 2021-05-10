@@ -41,7 +41,7 @@ class Model:
         cursor.close()
         connection.close()
 
-    def get_all_employees(self):
+    def get_employees_name(self):
         connection = sqlite3.connect("employees_database.db")
         cursor = connection.cursor()
         cursor.execute("""
@@ -53,3 +53,57 @@ class Model:
         cursor.close()
         connection.close()
         return rows
+
+    def get_employees_surname(self):
+        connection = sqlite3.connect("employees_database.db")
+        cursor = connection.cursor()
+        cursor.execute("""
+        SELECT surname FROM employees
+        """)
+
+        rows = cursor.fetchall()
+
+        cursor.close()
+        connection.close()
+        return rows
+
+    def get_employees_position(self):
+        connection = sqlite3.connect("employees_database.db")
+        cursor = connection.cursor()
+        cursor.execute("""
+        SELECT position FROM employees
+        """)
+
+        rows = cursor.fetchall()
+
+        cursor.close()
+        connection.close()
+        return rows
+
+    def get_employees_age(self):
+        connection = sqlite3.connect("employees_database.db")
+        cursor = connection.cursor()
+        cursor.execute("""
+        SELECT age FROM employees
+        """)
+
+        rows = cursor.fetchall()
+
+        cursor.close()
+        connection.close()
+        return rows
+
+    def get_employees_salary(self):
+        connection = sqlite3.connect("employees_database.db")
+        cursor = connection.cursor()
+        cursor.execute("""
+        SELECT salary FROM employees
+        """)
+
+        rows = cursor.fetchall()
+
+        cursor.close()
+        connection.close()
+        return rows
+
+
